@@ -1,9 +1,9 @@
 nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     padding: 1rem;
-    background-color:gray;
+    background-color:black;
     color: #fff;
     /* border-radius: 0.5rem; */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -11,6 +11,29 @@ nav {
     font-size: 15px;
     transition: background-color 0.3s ease;
     animation: slideIn 0.5s forwards;
+    height: 10vh;
+    font-size: 25px;
+
+    #search{
+        input{
+       border-radius: 20px 0 0 20px;
+       height: 37px;
+       border: 1px solid white;
+
+        }
+        #iconSearch{
+            width: 60px;
+            height: 38px;
+            font-size: 20px;
+            background-color: white;
+            color: black;
+            border-radius: 0 20px 20px 0;
+            border: 1px solid white;
+        
+            
+        }
+    }
+    
 }
 
 nav a {
@@ -148,4 +171,46 @@ nav a:hover {
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+aside{
+    width: 15vw;
+    background-color: black;
+    position: fixed;
+    height: 100vh;
+}
+#logo{
+/* margin-top: 20px; */
+margin-left: 10px;
+    img{
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    
+
+}
+}
+
+#sidebar{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 25px;
+
+    a{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    margin: auto;
+    }
+}
+
+#main{
+    width: 85vw;
+    margin-left: 15vw;
+    font-size: 40px;
+    background-color:gray;
 }

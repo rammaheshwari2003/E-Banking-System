@@ -1,22 +1,32 @@
-const express=require("express")
-const app=express()
-const cors=require("cors")
-const mongoose=require("mongoose")
-const bodyparser = require("body-parser")
-const {config}=require("dotenv")
+const express=require("express");
+const app=express();
+const cors=require("cors");
+const bodyparser = require("body-parser");
+const db=require("./utils/db");
 
-require("dotenv"),config()
-const port=process.env.PORT||5000
+const customerRoute=require("./route/customerRoute");
 
-mongoose.connect(process.env.DBCONNECT).then(()=>{
-    console.log("db connected")
-})
+require("dotenv").config();
 
+// CORS configuration options
+/*  const corsOptions = {
+    origin: 'https://example.com', // Specify the allowed origin
+    methods: ['GET', 'POST'], // Specify allowed HTTP methods
+    allowedHeaders: ['Content-Type'], // Specify allowed headers
+    credentials: true, // Allow credentials (cookies, authentication)
+};  */
+
+app.use(cors());
 app.use(bodyparser.urlencoded({extended:true}))
 app.use(bodyparser.json())
-app.use(cors())
+
+db.connetDB();
+
+app.use("/customer",customerRoute);
 
 
-app.listen(port,()=>{
-    console.log("server started")
+const port=process.env.PORT || 8000;
+
+app.listen(port, ()=>{
+    console.log(`Server run on port ${port}`);
 })
