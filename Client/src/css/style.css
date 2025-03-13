@@ -1,9 +1,11 @@
 nav {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    /* gap: 150px; */
     align-items: center;
     padding: 1rem;
     background-color:black;
+    /* background-color:#3bb40f; */
     color: #fff;
     /* border-radius: 0.5rem; */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -32,6 +34,11 @@ nav {
         
             
         }
+    }
+    img{
+        width: 150px;
+        height: 50px;
+        border-radius: 5px;
     }
     
 }
@@ -181,6 +188,7 @@ aside{
     background-color: black;
     position: fixed;
     height: 100vh;
+
 }
 #logo{
 /* margin-top: 20px; */
