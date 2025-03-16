@@ -17,12 +17,20 @@ const handleInput=(e)=>{
 
 }
 
-const handleSubmit=async(e)=>{
-    e.preventDefault();
+const handleSubmit=async()=>{
+    // e.preventDefault();
+    
     let api=`${BASE_URL}/customer/login`
-    const response=await axios.post(api,input)
-    alert(response.data.msg)
-navigate("/register")
+    try {
+        const response=await axios.post(api,input);
+    alert(response.data);
+    // console.log(response.data);
+    navigate("/");
+        
+    } catch (error) {
+        console.log(error);
+    }
+    
 }
 
     return(
@@ -37,6 +45,7 @@ navigate("/register")
  Enter Password:<input type="password" name="password" onChange={handleInput}/><br/>
  <button onClick={handleSubmit} >Submit</button><br />
 
+<h6><Link to="/forgotpassword">Forgot Password</Link></h6>
  <h6>If You Don't Have account : <Link to="/register">Registration</Link></h6>
 
  </div>

@@ -8,7 +8,8 @@ const customerSchema=new mongoose.Schema({
     email:{type:String,required:true},
     city:{type:String,required:true},
     mobile:{type:String,required:true},
-    accountType:{type:String},
+    accountType:{type:String,required:true},
+    password:{type:String, require:true},
     createdAt: { type: Date, default: Date.now},
 
 })

@@ -14,8 +14,8 @@ const Menu=()=>{
         
     
         <nav>
-
             <img src={bankLogo} />
+
 
             <FaBars />
             <div id="search">
@@ -37,13 +37,14 @@ const Menu=()=>{
            <hr size="6" color="white" />
            <div id="sidebar">
            <Link to="home">Home</Link>
-           <Link to="service">Service</Link>
+           <Link to="yourProfile">Your Profile</Link>
+           <Link to="miniStatement">Mini Statement</Link>
+           <Link to="statement">Statement</Link>
+           <Link to="resetPassword">Reset Password</Link>
            </div>
         </aside>
 
-        <div id="main">
-            <marquee behavior="alternate" direction="lefft">Welcome to E-Banking Service</marquee>
-        </div>
+       
         
         </>
     )
