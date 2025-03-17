@@ -112,6 +112,9 @@ const CustomerEmailVerify=async(req, res)=>{
     const {email} = req.body;
     try {
         const EmailVerify=await customerModel.findOne({email:email});
+        if(!EmailVerify.email==email){
+            res.send("Invalid Email");
+        }
         var formatPass=autoPassword.autoPassword();
         res.send("Email Sent OTP Successfull");
         
@@ -150,11 +153,25 @@ mailTransporter
 }
 
 
+const CustomerForgotPass=async(req, res)=>{
+    const {email,otp}=req.body;
+    try {
+        let ForgotPass=await customerModel.findOne({email:email});
+        console.log(ForgotPass);
+        res.send("ok")
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+
 
 
 module.exports={
     CustomerRegister,
     CustomerLogin,
     CustomerResetPassword,
-    CustomerEmailVerify
+    CustomerEmailVerify,
+    CustomerForgotPass
 }

@@ -7,6 +7,7 @@ import Home from "./Pages/Home"
 import ForgotPassword from "./Pages/ForgotPassword"
 import ResetPassword from "./Pages/ResetPassword"
 import Profile from "./Pages/Profile"
+import UpdatePass from "./Pages/UpdatePass"
 
 const App=()=>{
   return(
@@ -24,6 +25,7 @@ const App=()=>{
 
 
        <Route path="forgotpassword" element={<ForgotPassword />} />
+       <Route path="changeforgotpassword" element={<UpdatePass />} />
 
        
      

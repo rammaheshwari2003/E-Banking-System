@@ -1,17 +1,23 @@
 import { useState } from "react";
 import BASE_URL from "../config/BaseURL";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const ForgotPassword=()=>{
 
+    const navigate=useNavigate();
+
     const [btnStatus, setBtnStatus]=useState(false);
     const [email, setEmail]=useState("");
+    const [otp, setOTP]=useState("");
 
-    const handleInput=()=>{
-        setBtnStatus(true)
-    }
-    const handleSubmit=()=>{
-        // setBtnStatus(true)
+    
+    const handleSubmit=async()=>{
+        let api=`${BASE_URL}/customer/forgotPass`;
+        let res=await axios.post(api, {email:email, otp:otp});
+        alert(res.data);
+        navigate("/changeforgotpassword");
+        setBtnStatus(true);
 
     }
 
@@ -33,7 +39,7 @@ const ForgotPassword=()=>{
 
                 Enter Email Id:<input type="text" name="email" onChange={(e)=>{setEmail(e.target.value)}}/><br/>
             {btnStatus ? (<>
-                Enter OTP:<input type="text" name="otp"/><br/>
+                Enter OTP:<input type="text" name="otp" onChange={(e)=>{setOTP(e.target.value)}}/><br/>
             </>) : (<>
             </>)}
 
@@ -45,7 +51,6 @@ const ForgotPassword=()=>{
 
 
         </div>
-        
         </>
     )
 }
