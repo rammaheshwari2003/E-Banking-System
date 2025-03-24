@@ -1,0 +1,1094 @@
+/* #NavBar{
+    display: flex;
+    gap: 50px;
+    width: 100%;
+    background-color: blue;
+    height: 50px;
+    padding-left: 50px;
+    a{
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        margin-top: 10px;
+    }
+    a:hover{
+        width: 100px;
+        background-color:black;
+        text-align: center;
+        height: 30px;
+        transition: all 0.5s ease-in-out;
+      } 
+} */
+
+
+/* General Navbar Styles */
+#NavBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+}
+
+#NavBar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#NavBar .links {
+    display: flex;
+    gap: 20px;
+}
+
+#NavBar .links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+#NavBar .links a:hover {
+    width: 100px;
+    background-color: blue;
+    text-align: center;
+    height: 30px;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.hamburger .line.open {
+    transform: rotate(45deg);
+    transform-origin: 2px;
+}
+
+.hamburger .line:nth-child(2).open {
+    opacity: 0;
+}
+
+.hamburger .line:nth-child(3).open {
+    transform: rotate(-45deg);
+    transform-origin: 2px;
+}
+
+/* Responsive Styles - Mobile View */
+@media (max-width: 768px) {
+    #NavBar .links {
+        display: none;  /* Hide links on small screens */
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #333;
+        width: 100%;
+        padding: 20px;
+    }
+
+    #NavBar .links.active {
+        display: flex;  /* Show links when hamburger is clicked */
+    }
+
+    .hamburger {
+        display: flex;  /* Show hamburger on small screens */
+    }
+}
+
+
+
+/* #head{
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    text-shadow: 0 0 10px rgba(235, 229, 229, 0.2);
+    margin-bottom: 1.5rem;
+    color: #333;
+    background-color: #f6f6f6;
+    font-family: 'Lato', sans-serif,cursive;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+#login {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 2rem 1.5rem;
+    border-radius: 0.5rem;
+    background-color: #f6f6f6;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    width: 450px;
+    margin: 2rem auto;
+    animation: loginAnimation 0.5s ease forwards;
+
+    h6{
+        margin: auto;
+    }
+}
+
+#login input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    font-size: 12px;
+    margin: auto;
+    transition: border-color 0.3s ease;
+    animation: inputAnimation 0.5s ease forwards;
+}
+
+#login input:focus {
+    border-color: #007bff;
+    outline: none;
+    animation: inputFocus 0.3s ease forwards;
+}
+
+#login button {
+    align-self: center;
+    padding: 0.5rem 1.5rem;
+    background-color: #0069d9;
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: buttonAnimation 0.5s ease forwards;
+}
+
+#login button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+#login button:active {
+    background-color: #004494;
+    transform: translateY(0);
+} */
+
+/* General Styles for the Header */
+#head {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    text-shadow: 0 0 10px rgba(235, 229, 229, 0.2);
+    margin-bottom: 1.5rem;
+    color: #333;
+    background-color: #f6f6f6;
+    font-family: 'Lato', sans-serif, cursive;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Login Form Container */
+#login {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 2rem 1.5rem;
+    border-radius: 0.5rem;
+    background-color: #f6f6f6;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    width: 450px;
+    margin: 2rem auto;
+    animation: loginAnimation 0.5s ease forwards;
+}
+
+/* Input fields inside the login form */
+#login input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    font-size: 12px;
+    margin: auto;
+    transition: border-color 0.3s ease;
+    animation: inputAnimation 0.5s ease forwards;
+}
+
+/* Input field focus styles */
+#login input:focus {
+    border-color: #007bff;
+    outline: none;
+    animation: inputFocus 0.3s ease forwards;
+}
+
+/* Button inside the login form */
+#login button {
+    align-self: center;
+    padding: 0.5rem 1.5rem;
+    background-color: #0069d9;
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: buttonAnimation 0.5s ease forwards;
+}
+
+/* Button hover effects */
+#login button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Button active effects */
+#login button:active {
+    background-color: #004494;
+    transform: translateY(0);
+}
+/* Responsive Styles */
+
+@media (max-width: 768px) {
+    /* Make the login form container smaller on smaller screens */
+    #login {
+        width: 90%;
+        padding: 1.5rem;
+        margin: 1.5rem auto;
+        margin-top: 60px;
+
+    }
+
+    /* Adjust font sizes for smaller screens */
+    #head {
+        font-size: 2.5rem;
+        padding: 1rem;
+    }
+
+    /* Reduce input field font size */
+    #login input {
+        font-size: 14px;
+    }
+
+    /* Adjust button font size */
+    #login button {
+        font-size: 14px;
+        padding: 0.5rem 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further reduce login form size for very small screens */
+    #login {
+        width: 100%;
+        padding: 1.2rem;
+        margin-top: 70px;
+    }
+
+    /* Reduce header font size even further */
+    #head {
+        font-size: 2rem;
+    }
+
+    /* Adjust input fields for very small screens */
+    #login input {
+        font-size: 13px;
+    }
+
+    /* Adjust button padding and font size for mobile */
+    #login button {
+        font-size: 13px;
+        padding: 0.5rem 1rem;
+    }
+}
+
+
+@keyframes loginAnimation {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes inputAnimation {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes inputFocus {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes buttonAnimation {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+#registration {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 2rem 1.5rem;
+    border-radius: 0.5rem;
+    background-color: #f6f6f6;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    width: 450px;
+    margin: 2rem auto;
+    animation: loginAnimation 0.5s ease forwards;
+}
+
+/* Input fields inside the login form */
+#registration input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    font-size: 12px;
+    margin: auto;
+    transition: border-color 0.3s ease;
+    animation: inputAnimation 0.5s ease forwards;
+}
+
+/* Input field focus styles */
+#registration input:focus {
+    border-color: #007bff;
+    outline: none;
+    animation: inputFocus 0.3s ease forwards;
+}
+
+/* Button inside the login form */
+#registration button {
+    align-self: center;
+    padding: 0.5rem 1.5rem;
+    background-color: #0069d9;
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: buttonAnimation 0.5s ease forwards;
+    margin: auto;
+    justify-content: center;
+}
+
+/* Button hover effects */
+#registration button:hover {
+    background-color: #aede46;
+    color: black;
+    transform: translateY(-2px);
+}
+
+/* Button active effects */
+#registration button:active {
+    background-color: #004494;
+    transform: translateY(0);
+}
+/* Responsive Styles */
+
+@media (max-width: 768px) {
+    /* Make the login form container smaller on smaller screens */
+    #registration {
+        width: 90%;
+        padding: 1.5rem;
+        margin: 1.5rem auto;
+        margin-top: 60px;
+    }
+
+    /* Adjust font sizes for smaller screens */
+    #head {
+        font-size: 2.5rem;
+        padding: 1rem;
+    }
+
+    /* Reduce input field font size */
+    #registration input {
+        font-size: 14px;
+    }
+
+    /* Adjust button font size */
+    #registration button {
+        font-size: 14px;
+        padding: 0.5rem 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further reduce login form size for very small screens */
+    #registration {
+        width: 100%;
+        padding: 1.2rem;
+        margin-top: 70px;
+    }
+
+    /* Reduce header font size even further */
+    #head {
+        font-size: 2rem;
+    }
+
+    /* Adjust input fields for very small screens */
+    #registration input {
+        font-size: 13px;
+    }
+
+    /* Adjust button padding and font size for mobile */
+    #registration button {
+        font-size: 13px;
+        padding: 0.5rem 1rem;
+    }
+}
+
+
+@keyframes registrationAnimation {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes inputAnimation {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes inputFocus {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes buttonAnimation {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* Keyframes Animations */
+
+/* Animation for login form */
+@keyframes loginAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation for input fields */
+@keyframes inputAnimation {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Focus animation for input */
+@keyframes inputFocus {
+    from {
+        border-color: #ccc;
+    }
+    to {
+        border-color: #007bff;
+    }
+}
+
+/* Button animation */
+@keyframes buttonAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+#forpass{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 2rem 1.5rem;
+    border-radius: 0.5rem;
+    background-color: #f6f6f6;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    width: 450px;
+    margin: 2rem auto;
+
+    input{
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #ccc;
+        border-radius: 0.25rem;
+        font-size: 12px;
+        margin: auto;
+        transition: border-color 0.3s ease;
+        animation: inputAnimation 0.5s ease forwards;
+    }
+    button{
+        align-self: center;
+    padding: 0.5rem 1.5rem;
+    background-color: #0069d9;
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: buttonAnimation 0.5s ease forwards;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+#TopSideMenu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color:black;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+    height: 10vh;
+    font-size: 25px;
+
+    #search{
+        input{
+       border-radius: 20px 0 0 20px;
+       height: 37px;
+       border: 1px solid white;
+
+        }
+        #iconSearch{
+            width: 60px;
+            height: 38px;
+            font-size: 20px;
+            background-color: white;
+            color: black;
+            border-radius: 0 20px 20px 0;
+            border: 1px solid white;
+        
+            
+        }
+    }
+    img{
+        width: 150px;
+        height: 50px;
+        border-radius: 5px;
+    }
+    
+}
+ 
+aside{
+    width: 15vw;
+    background-color: black;
+    position: fixed;
+    height: 100vh;
+
+}
+#logo{
+    margin-left: 20px;
+        
+    h5{
+        width: 100px;
+        height: 100px;
+        border-radius: 100px;
+        border: 2px solid white;
+        background-color: white;
+        text-align: center;
+    }
+    }
+    
+
+
+    #sidebar{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        font-size: 20px;
+    
+        a{
+        text-decoration: none;
+        color: white;
+        cursor: pointer;
+        margin: auto;
+        }
+    }
+/*
+nav a {
+    color: inherit;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #3bb40f;
+    color: #eee;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-30px);
+        opacity:0;
+    }
+    to {
+        transform: translateY(10);
+        opacity: 1;
+    }
+}
+*/
+
+    
+
+
+    #main{
+        width: 85vw;
+        margin-left: 15vw;
+        font-size: 40px;
+        background-color:gray;
+    }
+
+
+    /* #deposite{
+        width: 80vw;
+        margin-left: 20vw;
+        
+    } */
+    #deposite {
+        max-width: 400px;  /* Reduced width for a more compact design */
+        margin: 30px auto;
+        padding: 20px;
+        background-color: #f1f1f1;  /* Light grey background color */
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+     
+      
+      #deposite h1 {
+        text-align: center;
+        color: #333;
+        font-size: 1.6rem;  /* Adjusted font size */
+        margin-bottom: 20px;
+      }
+      
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;  /* Reduced gap for a more compact layout */
+      }
+      
+      form label {
+        font-size: 1rem;  /* Adjusted label size */
+        color: black;
+      }
+      
+      form input {
+        padding: 8px 12px;  /* Reduced padding */
+        font-size: 1rem;  /* Adjusted font size */
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        outline: none;
+        transition: border-color 0.3s;
+      }
+      
+      form input:focus {
+        border-color: #36d7b7;
+      }
+      
+      form button {
+        padding: 8px 15px;  /* Reduced padding */
+        background-color: #36d7b7;  /* Greenish-blue color */
+        border: none;
+        color: white;
+        font-size: 1rem;  /* Adjusted font size */
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      
+      form button:hover {
+        background-color: #2aa68f;  /* Darker green when hovered */
+      }
+      
+      form button:disabled {
+        background-color: #b0b0b0;
+        cursor: not-allowed;
+      }
+      
+      .loader-container {
+        text-align: center;
+        padding: 20px;
+      }
+      
+      .loader-container h5 {
+        color: #555;
+        font-size: 1rem;
+      }
+      
+      .loader-container h6 {
+        color: #777;
+        font-size: 0.9rem;
+      }
+    }
+      @media (max-width: 768px) {
+        #deposite {
+          padding: 15px;
+          margin: 20px;
+        
+      
+        #deposite h1 {
+          font-size: 1.4rem;
+        }
+      
+        form label {
+          font-size: 1rem;
+        }
+      
+        form input {
+          font-size: 1rem;
+        }
+      
+        form button {
+          font-size: 1rem;
+        }
+      }
+    }
+      
+    /* #Withdraw{
+        width: 80vw;
+        margin-left: 20vw;
+        
+    } */
+    #Withdraw {
+        max-width: 400px;  /* Reduced width for a more compact design */
+        margin: 30px auto;
+        padding: 20px;
+        background-color: #f1f1f1;  /* Light grey background color */
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      
+      
+      #Withdraw h1 {
+        text-align: center;
+        color: #333;
+        font-size: 1.6rem;  /* Adjusted font size */
+        margin-bottom: 20px;
+      }
+      
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;  /* Reduced gap for a more compact layout */
+      }
+      
+      form label {
+        font-size: 1rem;  /* Adjusted label size */
+        color: black;
+      }
+      
+      form input {
+        padding: 8px 12px;  /* Reduced padding */
+        font-size: 1rem;  /* Adjusted font size */
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        outline: none;
+        transition: border-color 0.3s;
+      }
+      
+      form input:focus {
+        border-color: #36d7b7;
+      }
+      
+      form button {
+        padding: 8px 15px;  /* Reduced padding */
+        background-color: #36d7b7;  /* Greenish-blue color */
+        border: none;
+        color: white;
+        font-size: 1rem;  /* Adjusted font size */
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      
+      form button:hover {
+        background-color: #2aa68f;  /* Darker green when hovered */
+      }
+      
+      form button:disabled {
+        background-color: #b0b0b0;
+        cursor: not-allowed;
+      }
+      
+      .loader-container {
+        text-align: center;
+        padding: 20px;
+      }
+      
+      .loader-container h5 {
+        color: #555;
+        font-size: 1rem;
+      }
+      
+      .loader-container h6 {
+        color: #777;
+        font-size: 0.9rem;
+      }
+    }
+      @media (max-width: 768px) {
+        #Withdraw {
+          padding: 15px;
+          margin: 20px;
+        
+      
+        #Withdraw h1 {
+          font-size: 1.4rem;
+        }
+      
+        form label {
+          font-size: 1rem;
+        }
+      
+        form input {
+          font-size: 1rem;
+        }
+      
+        form button {
+          font-size: 1rem;
+        }
+      }
+    }
+    
+
+/* #balance-display{
+    width: 80vw;
+    margin-left: 20vw;
+} */
+ /* Balance Display Container */
+.balance-display {
+    background-color: #f4f7fa; /* Light background for a clean look */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 20px auto;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Heading 1 for Balance Inquiry */
+  .balance-display h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* Heading 2 for the balance value */
+  .balance-display h2 {
+    font-size: 24px;
+    color: #4caf50; /* Green color to indicate balance */
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  /* Optional: Add a border or some spacing for clarity */
+  .balance-display h1, .balance-display h2 {
+    margin-bottom: 20px;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* @media screen and (max-width: 768px) {
+    
+
+    #last{
+        #footAbout{
+            display: grid;
+            grid-template-columns: 1fr 1fr ;
+           
+        }
+    }
+
+
+  } */
+
+@media screen and (max-width: 425px) {
+    
+
+
+
+    /*-- Layout Home image  -- */
+    /* #homeImg{
+
+        img{
+        width:90%;
+        margin:1% 5% 2% 5%;
+        border-radius:10px;
+        }
+    
+    }
+    #last{
+       
+           display: flex;
+           flex-wrap: wrap;
+           gap: 50px;
+        } */
+
+
+  }
+
+
+#ministatement{
+    width: 75vw;
+    margin-left: 25vw;
+  }
+#statement{
+    width: 75vw;
+    margin-left: 25vw;
+  }
+/* #profile{
+    width: 75vw;
+    margin-left: 25vw;
+  } */
+  #profile {
+    background-color: #f4f4f9;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 30px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+  }
+  
+  #profile h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+  }
+  
+  hr {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+  }
+  
+  #profile h2 {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 10px 0;
+    line-height: 1.8;
+  }
+  
+  #profile h2 span {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  @media (max-width: 768px) {
+    #profile {
+      padding: 15px;
+      margin: 20px;
+    }
+  
+    #profile h1 {
+      font-size: 2rem;
+    }
+  
+    #profile h2 {
+      font-size: 1rem;
+    }
+  }
+  
